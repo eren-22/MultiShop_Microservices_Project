@@ -44,7 +44,7 @@ namespace MultiShop.Catalog.Services.CategoryServices
 			return _mapper.Map<GetByIdCategoryDTO>(value);
 		}
 
-		public async Task UpdateCategoryAsync(UpdateCatgoryDTO updateCategoryDTO)
+		public async Task UpdateCategoryAsync(UpdateCategoryDTO updateCategoryDTO)
 		{
 			var value = _mapper.Map<Category>(updateCategoryDTO);
 			await _categoryCollection.FindOneAndReplaceAsync(c => c.CategoryId == updateCategoryDTO.CategoryId, value); //Eşit olan id'yi bulduktan sonra value parametresindeki değerle değiştir.

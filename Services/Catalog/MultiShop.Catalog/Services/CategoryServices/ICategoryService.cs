@@ -7,7 +7,7 @@ namespace MultiShop.Catalog.Services.CategoryServices
 		//Task => Asenkron
 		Task<List<ResultCategoryDTO>> GetAllCategoryAsync();
 		Task CreateCategoryAsync(CreateCategoryDTO createCategoryDTO);
-		Task UpdateCategoryAsync(UpdateCatgoryDTO updateCategoryDTO);
+		Task UpdateCategoryAsync(UpdateCategoryDTO updateCategoryDTO);
 		Task DeleteCategoryAsync(string id);
 		Task<GetByIdCategoryDTO> GetByIdCategoryAsync(string id);
 	}
