@@ -2,7 +2,7 @@
 using MongoDB.Driver;
 using MultiShop.Catalog.DTOs.ProductImageDTOs;
 using MultiShop.Catalog.Entities;
-using MultiShop.Catalog.Services.ProductImageImageService;
+using MultiShop.Catalog.Services.ProductImageService;
 using MultiShop.Catalog.Settings;
 
 namespace MultiShop.Catalog.Services.ProductImageService

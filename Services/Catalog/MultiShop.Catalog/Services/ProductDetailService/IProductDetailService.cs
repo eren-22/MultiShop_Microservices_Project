@@ -1,6 +1,6 @@
 ﻿using MultiShop.Catalog.DTOs.ProductDetailDTOs;
 
-namespace MultiShop.Catalog.Services.ProductDetailDetailService
+namespace MultiShop.Catalog.Services.ProductDetailService
 {
 	public interface IProductDetailService
 	{

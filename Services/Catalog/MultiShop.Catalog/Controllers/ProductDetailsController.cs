@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MultiShop.Catalog.Constants;
 using MultiShop.Catalog.DTOs.ProductDetailDTOs;
-using MultiShop.Catalog.Services.ProductDetailDetailService;
+using MultiShop.Catalog.Services.ProductDetailService;
 
 namespace MultiShop.Catalog.Controllers
 {
