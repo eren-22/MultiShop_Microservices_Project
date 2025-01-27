@@ -5,6 +5,8 @@ using MultiShop.Catalog.Services.ProductImageService;
 
 namespace MultiShop.Catalog.Controllers
 {
+	[Route("api/[controller]")]
+	[ApiController]
 	public class ProductImagesController : Controller
 	{
 		private readonly IProductImageService _productImageService;
@@ -14,7 +16,7 @@ namespace MultiShop.Catalog.Controllers
 			_productImageService = productImageService;
 		}
 
-		[HttpGet]
+		[HttpGet("getAll")]
 		public async Task<IActionResult> ProductImageList()
 		{
 			var values = await _productImageService.GetAllProductImageAsync();
@@ -28,7 +30,7 @@ namespace MultiShop.Catalog.Controllers
 			return Ok(value);
 		}
 
-		[HttpPost]
+		[HttpPost("add")]
 		public async Task<IActionResult> CreateProductImage(CreateProductImageDTO createProductImageDTO)
 		{
 			//Mappleme yaptığımız için;
@@ -39,14 +41,14 @@ namespace MultiShop.Catalog.Controllers
 			return Ok(Messages.ProductImageAdded);
 		}
 
-		[HttpDelete]
+		[HttpDelete("delete")]
 		public async Task<IActionResult> DeleteProductImage(string id)
 		{
 			await _productImageService.DeleteProductImageAsync(id);
 			return Ok(Messages.ProductImageDeleted);
 		}
 
-		[HttpPut]
+		[HttpPut("update")]
 		public async Task<IActionResult> UpdateProductImage(UpdateProductImageDTO updateProductImageDTO)
 		{
 			await _productImageService.UpdateProductImageAsync(updateProductImageDTO);

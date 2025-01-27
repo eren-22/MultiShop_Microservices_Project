@@ -19,7 +19,7 @@ builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("D
 
 builder.Services.AddScoped<IDatabaseSettings>(sp =>
 {
-	return sp.GetRequiredService<IOptions<IDatabaseSettings>>().Value;  //DatabaseSettings içindeki valuelere ulaþacak(DbName vs.)
+	return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;  //DatabaseSettings içindeki valuelere ulaþacak(DbName vs.)
 });
 
 // Add services to the container.

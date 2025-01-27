@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MultiShop.Catalog.DTOs.CategoryDTOs;
 using MultiShop.Catalog.DTOs.ProductDetailDTOs;
+using MultiShop.Catalog.DTOs.ProductDTOs;
 using MultiShop.Catalog.DTOs.ProductImageDTOs;
 using MultiShop.Catalog.Entities;
 
@@ -17,10 +18,10 @@ namespace MultiShop.Catalog.Mapping
 			CreateMap<Category, UpdateCategoryDTO>().ReverseMap();
 			CreateMap<Category, GetByIdCategoryDTO>().ReverseMap();
 
-			CreateMap<Product, ResultProductDetailDTO>().ReverseMap();
-			CreateMap<Product, CreateProductDetailDTO>().ReverseMap();
-			CreateMap<Product, UpdateProductDetailDTO>().ReverseMap();
-			CreateMap<Product, GetByIdProductDetailDTO>().ReverseMap();
+			CreateMap<Product, ResultProductDTO>().ReverseMap();
+			CreateMap<Product, CreateProductDTO>().ReverseMap();
+			CreateMap<Product, UpdateProductDTO>().ReverseMap();
+			CreateMap<Product, GetByIdProductDTO>().ReverseMap();
 
 			CreateMap<ProductDetail, ResultProductDetailDTO>().ReverseMap();
 			CreateMap<ProductDetail, CreateProductDetailDTO>().ReverseMap();

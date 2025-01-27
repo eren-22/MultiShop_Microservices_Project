@@ -5,6 +5,8 @@ using MultiShop.Catalog.Services.CategoryServices;
 
 namespace MultiShop.Catalog.Controllers
 {
+	[Route("api/[controller]")]
+	[ApiController]
 	public class CategoriesController : Controller
 	{
 		private readonly ICategoryService _categoryService;
@@ -14,7 +16,7 @@ namespace MultiShop.Catalog.Controllers
 			_categoryService = categoryService;
 		}
 
-		[HttpGet]
+		[HttpGet("getAll")]
 		public async Task<IActionResult> CategoryList()
 		{
 			var values = await _categoryService.GetAllCategoryAsync();
@@ -28,7 +30,7 @@ namespace MultiShop.Catalog.Controllers
 			return Ok(value);
 		}
 
-		[HttpPost]
+		[HttpPost("add")]
 		public async Task<IActionResult> CreateCategory(CreateCategoryDTO createCategoryDTO)
 		{
 			//Mappleme yaptığımız için;
@@ -39,14 +41,14 @@ namespace MultiShop.Catalog.Controllers
 			return Ok(Messages.CategoryAdded);
 		}
 
-		[HttpDelete]
+		[HttpDelete("delete")]
 		public async Task<IActionResult> DeleteCategory(string id)
 		{
 			await _categoryService.DeleteCategoryAsync(id);
 			return Ok(Messages.CategoryDeleted);
 		}
 
-		[HttpPut]
+		[HttpPut("update")]
 		public async Task<IActionResult> UpdateCategory(UpdateCategoryDTO updateCategoryDTO)
 		{
 			await _categoryService.UpdateCategoryAsync(updateCategoryDTO);

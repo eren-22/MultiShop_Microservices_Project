@@ -5,6 +5,8 @@ using MultiShop.Catalog.Services.ProductDetailService;
 
 namespace MultiShop.Catalog.Controllers
 {
+	[Route("api/[controller]")]
+	[ApiController]
 	public class ProductDetailsController : Controller
 	{
 		private readonly IProductDetailService _productDetailService;
@@ -14,7 +16,7 @@ namespace MultiShop.Catalog.Controllers
 			_productDetailService = productDetailService;
 		}
 
-		[HttpGet]
+		[HttpGet("getAll")]
 		public async Task<IActionResult> ProductDetailList()
 		{
 			var values = await _productDetailService.GetAllProductDetailAsync();
@@ -28,7 +30,7 @@ namespace MultiShop.Catalog.Controllers
 			return Ok(value);
 		}
 
-		[HttpPost]
+		[HttpPost("add")]
 		public async Task<IActionResult> CreateProductDetail(CreateProductDetailDTO createProductDetailDTO)
 		{
 			//Mappleme yaptığımız için;
@@ -39,14 +41,14 @@ namespace MultiShop.Catalog.Controllers
 			return Ok(Messages.ProductDetailAdded);
 		}
 
-		[HttpDelete]
+		[HttpDelete("delete")]
 		public async Task<IActionResult> DeleteProductDetail(string id)
 		{
 			await _productDetailService.DeleteProductDetailAsync(id);
 			return Ok(Messages.ProductDetailDeleted);
 		}
 
-		[HttpPut]
+		[HttpPut("update")]
 		public async Task<IActionResult> UpdateProductDetail(UpdateProductDetailDTO updateProductDetailDTO)
 		{
 			await _productDetailService.UpdateProductDetailAsync(updateProductDetailDTO);
